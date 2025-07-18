@@ -1,1 +1,179 @@
+✅ Complete Git & GitHub Q&A — From Basic to Advanced
+🔰 SECTION 1: GIT BASICS
+1. What is Git?
+Answer:
+Git is a distributed version control system (VCS) used to track changes in source code during software development.
+
+2. What are the key features of Git?
+Answer:
+Distributed architecture
+Branching and merging
+Lightweight
+Fast performance
+Data integrity (SHA-1 hashing)
+
+3. How do you install Git?
+Answer:
+Windows: git-scm.com
+macOS: brew install git
+Linux: sudo apt install git
+
+4. How do you check your Git version?
+git --version
+
+5. How do you configure Git (name & email)?
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+6. What is a Git repository?
+Answer:
+A directory containing your project and a .git/ folder that tracks all version history.
+
+7. How do you initialize a Git repository?
+git init
+8. What are staging and committing?
+Staging: Selecting which changes go into the next commit (git add)
+
+Committing: Saving changes to version history (git commit)
+
+9. How to check the status of your repo?
+git status
+10. How do you see commit history?
+git log
+11. What does .gitignore do?
+Answer:
+Lists files/folders Git should ignore (e.g., node_modules/, *.log, .env).
+
+12. How do you undo changes?
+git restore <file>        # Undo unstaged changes
+git reset HEAD <file>     # Unstage
+git revert <commit-hash>  # Revert a commit
+
+🧰 SECTION 2: GIT INTERMEDIATE
+
+13. How do you create a branch?
+git branch feature-xyz
+git checkout feature-xyz
+# Or combine:
+git checkout -b feature-xyz
+
+14. How do you merge branches?
+git checkout main
+git merge feature-xyz
+
+15. What is a merge conflict?
+Answer:
+Occurs when changes in two branches conflict. Git will ask you to manually resolve and commit.
+
+16. How do you stash changes?
+git stash
+# Apply them later:
+git stash apply
+
+17. What is the difference between fetch, pull, and push?
+git fetch: Gets updates from remote, no merge.
+git pull: Fetch + merge.
+git push: Uploads local commits to remote.
+
+18. How to rebase a branch?
+git checkout feature
+git rebase main
+
+19. How do you see a visual graph of commits?
+git log --oneline --graph --all
+
+20. How do you delete a branch?
+git branch -d feature-xyz       # Local
+git push origin --delete feature-xyz  # Remote
+
+🌐 SECTION 3: GITHUB BASICS
+21. What is GitHub?
+Answer:
+A cloud-based platform built on Git, used to host repositories and collaborate on code.
+
+22. How to create a repository on GitHub?
+Click New Repo on GitHub.
+Fill in name, description, visibility.
+(Optional) Add README, .gitignore, license.
+
+23. How to clone a GitHub repo?
+git clone https://github.com/username/repo.git
+
+24. How to push local code to GitHub?
+git remote add origin https://github.com/username/repo.git
+git push -u origin main
+25. What is a fork?
+Answer:
+A personal copy of someone else's repo. Useful for contributing to open source.
+
+26. What is a pull request (PR)?
+Answer:
+A request to merge changes from one branch into another. Used for code review and collaboration.
+
+27. How do you enable GitHub Pages?
+Go to repo → Settings → Pages
+Choose source branch (e.g., main or gh-pages)
+GitHub hosts your site
+
+28. How do you add collaborators to a repo?
+Go to repo → Settings → Collaborators
+Invite users by GitHub username or email.
+
+🚀 SECTION 4: GITHUB ADVANCED
+
+29. What are GitHub Actions?
+Answer:
+CI/CD workflows that run tests, builds, deployments, etc., using .github/workflows/*.yml.
+
+30. Example: GitHub Action to run tests
+name: Run Tests
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: npm test
+
+31. How to revert a pull request?
+Navigate to merged PR → Click Revert
+GitHub opens a new PR to undo changes.
+
+32. What is a GitHub release?
+Answer:
+A tagged version of your code with attached binaries or changelog, often used for versioned software.
+
+33. How to generate a GitHub token?
+Go to GitHub → Settings → Developer settings → Tokens
+Generate a Personal Access Token (PAT) with required scopes.
+
+34. How to use the GitHub CLI (gh)?
+gh repo clone owner/repo
+gh pr create
+gh issue list
+
+35. How to sign commits with GPG?
+git commit -S -m "Signed commit"
+(Requires setup of GPG key and connecting it to GitHub)
+
+36. What are protected branches?
+Answer:
+Rules set in GitHub to prevent force-push, require reviews, enforce status checks before merge.
+
+37. What are GitHub Webhooks?
+Answer:
+Used to notify other services (like Jenkins, Slack) when events like PRs or commits happen.
+
+38. What is the GitHub GraphQL API?
+Answer:
+A powerful way to query GitHub data more efficiently than REST by specifying exactly what data you need.
+
+39. What is GitHub Codespaces?
+Answer:
+A cloud-based dev environment with VS Code in the browser, fully integrated with GitHub repos.
+
+40. How do you archive a GitHub repo?
+Go to Settings → Scroll to Danger Zone → Click Archive this repository.
+
 
